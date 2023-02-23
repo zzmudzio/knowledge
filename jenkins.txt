@@ -1,0 +1,40 @@
+Running parallel pipeline: 
+
+pipeline {
+    agent none
+    stages {
+        stage('Parallel tests') 
+        {
+            parallel
+            {
+                stage('Linux node') 
+                    {
+                        agent
+                        {
+                            label "built_in"
+                        }
+                        steps 
+                        {
+                            echo "hello from linux node"
+                        }
+                    }
+                stage('Windows node') 
+                {
+                        agent 
+                        {
+                            label "Windows_node"
+                        }
+                        steps 
+                        {
+                            echo "hello from windows node"
+                        }
+                }
+            }
+        } 
+    }
+    post {
+        always {
+            echo "recap";
+        }
+    }
+}

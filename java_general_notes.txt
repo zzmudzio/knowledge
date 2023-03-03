@@ -1,0 +1,239 @@
+Jeżeli posiadamy konstruktor np. public Employee() i chcemy w nim uruchomić inny konstuktor z tej samej klasy, należy na jego początku umieścić this(zmienne w konstuktorze); 
+
+Jeżeli przesłaniamy jakąś metodę i chcemy wywołać bazową musimy skorzystać z instrukcji super.nazwaMetody() 
+
+W celu wywołania konstruktora klasy bazowej należy skorzystać z instrukcji super(argument1, argument2) etc. 
+
+Jeżeli klasa dziedziczy po innej klasie należy za jej nazwą dopisać extends KlasaBazowa
+
+W celu dodania projektu do innego projektu należy kliknąć prawym na projekcie, do którego chcemy dodać, wybrać Properties i następnie Project, tam wybrać projekt, który chcemy dodać i zaimportować go w kodzie 
+
+Ciekawa jest klasa IntStream - w której możemy skorzystać z metody rangeClosed, tworzącej nam zakres wartości, coś na zasadzie range(x, y) w Pythonie 
+
+W pliku może być tylko jedna klasa publiczna i dowolna ilość klas prywatnych 
+
+Aby zwrócic w metodzie tablicę należy użyć np.  return new int[] {1, 2, 3}; 
+
+Nazwy pakietów warto określać jako odwrotną domenę, np. package pl.zmuda.testowy_pakiet  stworzy nam katalog pl w nim zmuda a w nim katalog testowy_pakiet 
+
+Operator trójagrumentowy(ternary operator)  wyrażenie ? wartosc_jezeli_prawda : wartosc_jezeli falsz, np. 5 < 7 ? "5 jest mniejsze od 7" : "5 nie jest mniejsze od 7"
+
+Warto pamiętać o IntPredicate:
+
+IntPredicate isEven = arg -> arg % 2 == 0;
+
+        // test whether 4 is even
+        System.out.println(isEven.test(4));
+
+        // test whether 3 is even
+        System.out.println(isEven.test(3));
+
+Klasa zawierająca przynajmniej jedną metodę abstrakcyjną sama musi być abstrakcyjna 
+
+Metody oznaczone jako final w klasie bazowej nie podlegają już przesłanianiu w klasie potomnej 
+
+Klasy oznaczone jako final nie podlegają dalszemu dziedziczeniu 
+
+Nie można tworzyć obiektów klas abstrakcyjnych 
+
+Zapisanie wartości inta do string String.valueOf(int wartosc) lub np. String x = "" + zmiennaTypuInt; 
+
+Z obiektu typu StringBuilder do Stringa zmieniamy z użyciem metody toString() 
+
+Zapisanie wartości Stringa do int za pomocą np. Integer.parseInt("5"); 
+
+Rzutowanie jawne jest stosowane w sytuacji, gdy zachodzi ryzyko utraty dokładnej wartości, np. posiadamy wartość double x = 3.40 i chcemy ją zapisać w zmiennej int. Jeżeli chcielibyśmy zrobić odwrotnie, nie trzeba robić tego jawnie ponieważ w przypadku zmiany typu z int na double nie ma ryzyka utraty dokładnej wartości. 
+
+public void Test(int... zmienna) < jest to przykład dekleracji metody, która moze przyjmowac zmienna liczbe argumentow, w tej sytuacji aby odniesc sie do argumentow wystarczy przejść pętlą for(foreach) przez tablice 'zmienna' 
+
+Metoda String replaceAll(String regex, String replacement) - zastępuje wszystkie charaktery spełniające wyrażenie regularne wartością z drugiego argumentu 
+
+W przypadku ArrayList odwołanie do elementu z listy możliwe jest dzięki metodize get, np. my_list.get(0) pobiera z listy my_list wartość elementu znajdującego się pod indeksem 0 
+
+Różnica między int a Integer polega na tym, że typ prymitywny(int) nie jest wyposażony w takie metody jak Integer, tj. Integer jest bardziej elastyczny, można np. bez problemów zapisać inta przechowywanego w Stringu itp (za pomocą Integer.ParseInt("3") ) 
+
+Jeżeli chcemy ArrayList przekonwertować na zwykła tablicę można skorzystać z konstrukcji: myList.toArray(new Integer[my_list.size()] - w tym przypadku ArrayList jest <Integer> i chcemy przekonwertować na Integer 
+
+W przypadku, gdy klasa jest rozszerzona o interfejs czy inną klase, np. KlasaA , możemy stworzyć zmienną o typie tej klasy(KlasaA) lub interfejsu aczkolwiek będzie ona w stanie wykonywać jedynie te metody, które są w niej zawarte. Czyli np. jeżeli klasa MojaKlasa1 implementuje dwa interfejsy, np. IMojInterfejs1 i IMojInterfejs2 to jeżeli stworzymy zmienną: 
+
+MojaKlasa1 mojObiekt = new MojaKlasa1();
+IMojInterfejs1 testowyObiekt = mojObiekt; 
+
+To w takiej sytuacji na rzecz obiektu testowyObiekt możliwe jest wykonanie jedynie metod zawartych w interfejsie IMojInterfejs1. 
+
+Konwencje nazewnictwa: nazwy klas z wielkiej litery(PascalCase), metody - np. mojaTestowaMetoda() - zaczynamy z małej litery, kolejny wyrazy wielkie, pola w klasie oraz zmienne - równiez camelCase, czyli np. int mojaZmienna = 10. 
+
+W celu wyświetlenia zawartości tablicy np. int[] należy użyć: Arrays.toString(nazwa_tablicy) 
+
+W celu porównywania obiektów tej samej klasy należy zaimplementować w klasie interfejs Comparable, który umożliwi nam zaplanowanie strategii porównywania. Interfejs ten jest używany w celu uporządkowania obiektów w przypadku klas zdefiniowanych przez programistę. Zawiera w sobie tylko jedną metodę, compareTo(Object). 
+
+Do posortowania prostej listy, np. stringów wystarczy użyć Collections.sort(nazwa_listy) - sortuje w ten sposób, że prawdopodobnie najpierw wartości ujemne, potem 0 i potem dodatnie
+
+Comparable od Comparator różni się tym, że Comparator to oddzielna klasa, dzięki czemu możemy stworzyć różnego rodzaju komparatory, w przypadku Comparable jest możliwość implementacji tylko jednego rozwiązania. Przykładowa implementacja comparatora: 
+
+class RankComparator implements Comparator<Player> {
+	public int compare(Player p1, Player p2) { 
+		return p1.getRank() - p2.getRank();
+	}
+}
+
+Przykładowa implementacja Comparable: 
+
+	@Override
+	public int compareTo(Player p2) {
+		return this.getName().compareTo(p2.getName());
+	}
+
+Java 8 umożliwiła w interfejsach dodanie domyślnych metod - działa to w ten sposób, że klasa implementująca interfejs nie musi definiować metody określonej jako default. W interfejsach wszystkie metody mają domyślnie dostęp public, nie trzeba go dopisywać przy ich deklaracji. 
+
+Interfejs funkcyjny to taki, który posiada w sobie wyłącznie jedną metodę abstrakcyjną. Poza tym może posiadać np. metody domyślne. 
+
+public static String oper(Function <String, String> f, String text) {   return f.apply(text); }
+
+Powyższa funkcja przyjmuje jako argument inną funkcję przyjmującą jeden argument typu String i zwracającą String, wywołanie jej to np. Opstrings.oper(Opstrings::vertMirror, testString); 
+
+W instrukcji switch możemy połączyć ze sobą case'y, np. case "X" : case "Y" : case "Z" będzie weryfikować, czy wartość switch(letter) jest X lub Y lub Z 
+
+Jeżeli klasa posiada pola, w których nie jest określony poziom dostępu(np. public, protected czy private) to pola te są dostępne dla klas w ramach jednego pakietu(package) 
+
+Kompozycja od dziedziczenia różni się tym, że w jej przypadku nie następuje rozszerzenie klasy o klasę bazową a utworzenie w klasie "podrzędnej" pola będącego obiektem klasy "nadrzędnej". 
+
+Klauzula throws NazwaWyjątku dodana za parametrami metody oznacza to, że metoda może zgłosić taki wyjątek. W związku z czym, kod wywołujący metodę ma "świadomość", że dany wyjątek może wystąpić. 
+
+Throw od throws różni się tym, że throw używane jest np. wewnątrz metody(lub konstruktora), z kolei throws znajduje się przy sygnaturze metody. Throw służy do rzucenia wyjątku, z kolei throws do deklaracji możliwych wyjątków. 
+
+Warto zapamiętać metodę IntStream.iterate(1, i -> i+2).limit(6) - utworzy ona ciąg danych od 1, zwiększając każdy element o 2 (i+2), tworząc łącznie 6 elementów(limit(6)) - łatwo potem ten ciąg zamienić na tablicę/listę. 
+
+Checked Exceptions - to takie wyjątki, z których obsługą musimy uporać się na etapie pisania kodu ponieważ weryfikowane jest to przy kompilacji. Tworząc np. obiekt FileReader musimy zapewnić obsługę FileNotFoundException, inaczej program się nie skompiluje. 
+
+Wszystkie wyjątki będące podklasami RunTimeException to unchecked exceptions. Pozostałe to checked exceptions. Zarówno checked exceptions jak i unchecked exceptions powinny być obsłużone przez kod. Różnią się tym, że unchecked nie są sprawdzane przez Jave, np. podczas próby kompilacji. 
+
+Porównanie leksykograficzne znaków - porównanie ich wartości unicode 
+
+Java traktuje wszystkie literały o tej samej zawartości jako ten sam obiekt String 
+
+Warto zapamiętać metodę StringUtils.countMatches(wyraz_do_przeszukania, litera) - zwraca liczbę wystąpień zmiennej przysłanej jako "litera" w wyraz_do_przeszukania 
+
+Metoda rekurencyjna musi zawierać tzw. base code, który umożliwi zaprzestanie wywoływania kolejnych postaci tej funkcji oraz zapobiegnie przepełnieniu stosu. 
+
+Serializacja jest to proces, w którym obiekt, np. z języka Java jest zamieniany na tekst(JSON lub XML). Wykonywane jest to po to aby np. zapisać dany obiekt w bazie danych, lub przesłać do innego systemu. 
+
+Klasa anonimowa to stworzenie jedynej instancji klasy w miejscu jej użycia. 
+
+Każde wyrażenie lambda jest instancją dowolnego interfejsu funkcyjnego. Interfejs funkcyjny to interfejs, który ma tylko jedną abstrakcyjną metodę. Można stosować adnotację @FunctionalInterface aby zapanować nad zmianami w kodzie. 
+
+Metody statyczne w interfejsach muszą zawierać ciało. 
+
+Implicit wait w Selenium może być stosowane tylko w stosunku do findElement. Tworzymy przez manage().timeouts().implicityWait... 
+
+Explicit wait w Selenium tworzymy poprzez WebDriverWait nazwa_obiektu = new WebDriverWait(WebDriver driver_name, Duration.ofSeconds(czas w sekundach)) 
+
+W selektorach CSS "#" oznacza id, czyli np. input[id='firstName'] można zapisać jako input#firstName
+
+W selektorach CSS "." oznacza class, czyli np. textarea[class='test-class-name'] można zapisać jako textarea.test-class-name
+
+Do obsługi list rozwijanych służy obiekt Select. Wyszukujemy go tak jak WebElement, tylko najpierw należy stworzyć obiekt tej klasy, do konstruktora podając nazwę drivera + findElement..) 
+
+Do obsługi klawiatury, myszki - służą Actions oraz Action. Można stworzyć obiekt typu Actions, dodać ciąg operacji, które zwieńczone zostaną metodą build(), następnie przekazać ten obiekt do obiektu typu Action i tam wykonać za pomocą metody perform()
+
+Do pobierania plików z wykorzystaniem Selenium WebDriver można stosować aplikację wget. 
+
+W celu dodania zależności bezpośrednio w IntelliJ wystarczy użyć Alt + insert 
+
+W celu wykonywania testów w określonej kolejności, należy skorzystać z adnotacji @Test(priority = 0), @Test(priority = 1) itp 
+
+TestSuite w TestNG tworzymy w pliku *xml 
+
+Struktura TestSuite wraz z hierarchią adnotacji: 
+
+BeforeSuite
+'   BeforeTest
+'   '   BeforeClass
+'   '   '   BeforeMethod
+'   '   '   '   myTestMethod3
+'   '   '   AfterMethod
+'   '   '   BeforeMethod
+'   '   '   '   myTestMethod4
+'   '   '   AfterMethod
+'   '   AfterClass
+'   AfterTest
+'   BeforeTest
+'   '   BeforeClass
+'   '   '   BeforeMethod
+'   '   '   '   myTestMethod1
+'   '   '   AfterMethod
+'   '   '   BeforeMethod
+'   '   '   '   myTestMethod2
+'   '   '   AfterMethod
+'   '   AfterClass
+'   '   BeforeClass
+'   '   '   BeforeMethod
+'   '   '   '   myTestMethod3
+'   '   '   AfterMethod
+'   '   '   BeforeMethod
+'   '   '   '   myTestMethod4
+'   '   '   AfterMethod
+'   '   AfterClass
+'   AfterTest
+AfterSuite
+
+Wzorzec projektowy singleton polega na tym, że można stworzyć jedynie jeden obiekt danej klasy. Stosowane w przypadku np. klas zajmujących się połączeniami oraz operacjami na bazach danych. 
+
+mvn clean - czyszczenie katalogu wynikowego target; mvn package - zbiera wszystkie klasy i tworzy *jar; jest jeszcze mvn compile
+uruchomienie *jar z zewnętrznymi bibliotekami, np.: java -cp target/* pl.worktime.Main < oznacza to, że w katalogu target bierzemy wszystkie pliki *jar a następnie uruchamiamy Main znajdujące się w pl/worktime/Main 
+
+Dzięki maven-assembly-plugin możemy zbudować tzw. fat jar, czyli nasz projekt wraz z zależnościami w postaci jednego, gotowego pliku *jar. 
+
+Aby dostać się do startup listy w windowsie, należy skorzystać z polecenia win+r i następnie shell:startup
+
+Operator instanceof pozwala określić, czy obiekt jest danego typu. Przykład: 
+
+MojaKlasa obiekt = new MojaKlasa();
+obiekt instanceof MojaKlasa zwróci true 
+
+Jeżeli mamy klasę, np. MyClass, to aby dostac się do klasy Class zawierającej info o klasie, nie mając utworzonego obiektu klasy MyClass, możemy skorzystać z instrukcji MyClass.class, jeżeli mamy utworzony obiekt np. myObj, możemy skorzystać z myObj.getClass() 
+
+Wildcards: 
+List<? super Integer> foo3 = new ArrayList<Number>();   // Number is a superclass of Integer
+List<? extends Number> foo3 = new ArrayList<Double>();  // Double extends Number
+List<?> list of unknown type 
+
+Wszystkie pola w interfejsie są domyślnie public static final 
+
+mvn clean spring-boot:run - czyszczenie katalogu target i uruchomienie aplikacji spring boot 
+
+jeżeli ping jakiejś domeny zwraca adres w formie ipv6 a my chcemy nadal w ipv4 należy dodać "-4" np. ping google.pl -4 
+
+netstat -ano | find "8080" | find "LISTEN" - pomaga sprawdzić, jaki proces nasłuchuje w tym wypadku na porcie 8080 
+tasklist | find "19592" pomaga sprawdzić, jaki proces konkretnie kryje się pod PID zwróconym przez polecenie powyżej 
+
+MVC - Model przechowuje dane, View odpowiada za wizualne elementy strony, Controller - spina wszystko razem 
+
+Controller jest punktem wejściowym wszystkich requestów, które przychodzą do serwera. 
+
+Adnotacja @GetMapping umożliwia zamianę zwykłej metody na metodę "uchwytującą", która może otrzymywać requesty GET. Jeżeli oznaczymy metodę jako @GetMapping - może ona reagować na requesty GET. 
+
+POJO to najprostszy rodzaj klasy Javowej, rozwinięcie skrótu to Plan Old Java Object
+
+Thymeleaf umożliwia połączenie widoku oraz modelu (View and Model) 
+
+Ctrl + alt + l("L") < w intellij powoduje ładne ułożenie kodu
+
+Aby zapuścić build projektu w mavenie bez wykonywania testów jednostkowych: mvn clean package -DskipTests
+
+Rekord nie może roszerzać klas, pola mogą być tylko statyczne, metody mogą być i statyczne i zwykłe. Rekordy nie mogą być klasą bazową do dziedziczenia. Można implementować interfejsy. Można nadpisać konstruktor domyślnie dostarczany. 
+
+W przypadku metod generycznych, określenie parametru typu w postaci public static <T extends Number> String nazwaMetody(T argument, T argument2) gwarantuje, że będziemy mogli wysłać do metody typ T, który rozszerza klasę Number ale oba argumenty muszą być tego samego typu. Gdybyśmy skorzystali w ten sposób: 
+
+public static String testMethod(List<? extends Number> argument, List<? extends Number> argument2)
+
+moglibyśmy wysłać do metody np. List<Integer> jako argument i List<Double> jako argument2, co nie zadziałałoby tak jak miało. 
+
+Oznaczenie, np. <T> w syganturze metody oznacza, że będzie ona wykorzystywała typ generyczny "T", np. 
+
+public <T> List<T> fromArrayToList(T[] a) {   
+    return Arrays.stream(a).collect(Collectors.toList());
+}
+
+W przypadku FluentWait(Selenium) można określić interwał czasu, w którym będzie sprawdzany dany warunek(np. czy element się pojawił). 
+Żeby sprawdzić z jakiego katalogu aplikacja jest uruchamiana należy skorzystać z  new File(".").getAbsolutePath()

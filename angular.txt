@@ -36,3 +36,17 @@ So the "Text" message will be written using a red color.
 
 ====
 
+Directives:
+
+*ngIf => it is a directive that conditionally display a template if condition is true. 
+
+<div *ngIf="condition"> <p> Some template in here </p> </div>
+
+
+
+*ngFor
+*ngSwitch
+ngClass
+ngStyle
+
+

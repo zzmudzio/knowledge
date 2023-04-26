@@ -42,9 +42,11 @@ Directives:
 
 <div *ngIf="condition"> <p> Some template in here </p> </div>
 
+*ngFor => it is used to traverse over an array and display the data inside the UI 
+
+<ng-template *ngFor="let element of myArr"> {{ element }} </ng-template>
 
 
-*ngFor
 *ngSwitch
 ngClass
 ngStyle

@@ -6,3 +6,33 @@ ng generate component <component_name>, e.g.: ng generate component rooms or usi
 
 When we make any changes in angular.json file, we have to restart the server, those changes are not watched. 
 
+Module is a mechanism to group components, directives, pipes that are related. Module is created by using @NgModule decorator. Inside decorator there are a few properties, e.g.: 
+
+imports => expects an array of modules
+declarations => expects an array of components
+bootstrap => here we define a root component of our module 
+
+=====
+
+Displaying values using interpolation: 
+
+Declaration in class:
+myValue = "sometext";
+.. then in the template:
+
+<h1> {{ myValue }} </h1> 
+
+Property binding:
+
+Declaration in class:
+
+someVar = "color: red";
+
+then in template:
+
+<p [style] = "someVar"> Text </p> 
+
+So the "Text" message will be written using a red color. 
+
+====
+

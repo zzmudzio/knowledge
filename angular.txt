@@ -42,7 +42,13 @@ Directives:
 
 <div *ngIf="condition"> <p> Some template in here </p> </div>
 
-*ngFor => it is used to traverse over an array and display the data inside the UI 
+*ngFor => it is used to traverse over an array and display the data inside the UI, it repeats the template for each element
+
+<ul>
+<li *ngFor="let element of ElementsList"> {{ element }} </li>
+</ul>
+
+^ For each element of ElementsList array, there will be a <li> rendered. 
 
 <ng-template *ngFor="let element of myArr"> {{ element }} </ng-template>
 

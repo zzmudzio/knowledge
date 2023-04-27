@@ -50,11 +50,11 @@ Directives:
 
 ^ For each element of ElementsList array, there will be a <li> rendered. 
 
-<ng-template *ngFor="let element of myArr"> {{ element }} </ng-template>
+<ng-template *ngFor="let element of myArr; let i = index"> {{ element }} {{ index }} </ng-template>
 
+*ngSwitch => works similarly as switch in e.g. java language
 
-*ngSwitch
-ngClass
-ngStyle
+ngClass, ngStyle are used for styling purposes - to ngClass we can pass class names in an e.g. array etc., ngStyle is for styling ad hoc 
+
 
 

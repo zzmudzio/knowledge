@@ -12,6 +12,11 @@ imports => expects an array of modules
 declarations => expects an array of components
 bootstrap => here we define a root component of our module 
 
+To check the doc about a method we can press F12 inside editor. 
+
+ng add <dependency_name> vs npm install <dep_name> -> the difference is that ng add will also update config files, such as packages.json
+
+
 =====
 
 Displaying values using interpolation: 

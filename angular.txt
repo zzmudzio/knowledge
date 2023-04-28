@@ -56,5 +56,9 @@ Directives:
 
 ngClass, ngStyle are used for styling purposes - to ngClass we can pass class names in an e.g. array etc., ngStyle is for styling ad hoc 
 
+=== 
 
+Pipes => they simply are a function that we apply on any expression/value in a template, to transform it into other value. 
 
+someVar: number = 300;
+<p> {{ someVar | currency: 'EUR' }} </p> <!-- it will display 300 € -->

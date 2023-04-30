@@ -67,3 +67,20 @@ Pipes => they simply are a function that we apply on any expression/value in a t
 
 someVar: number = 300;
 <p> {{ someVar | currency: 'EUR' }} </p> <!-- it will display 300 € -->
+
+=== 
+
+Communication between components: 
+
+@Input() decorator marks a property as a receiver property. It can receive data from a parent component. Property binding is being used, so to use in child component a variable "myVar" that is declared in parent component we have to use:
+
+In child component.ts 
+
+@Input() myVar: string = "";
+
+Then in html template, ordinary, by interpolation: {{ myVar }}
+
+In parent component we have to use a property binding and bind it's myVar to child component seletor:
+
+<child-component-name [myVar]="myVar"></child-component-name> 
+

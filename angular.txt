@@ -57,7 +57,7 @@ Directives:
 
 <ng-template *ngFor="let element of myArr; let i = index"> {{ element }} {{ index }} </ng-template>
 
-*ngSwitch => works similarly as switch in e.g. java language
+[ngSwitch] => works similarly as switch in e.g. java language
 
 ngClass, ngStyle are used for styling purposes - to ngClass we can pass class names in an e.g. array etc., ngStyle is for styling ad hoc 
 
@@ -80,7 +80,7 @@ In child component.ts
 
 Then in html template, ordinary, by interpolation: {{ myVar }}
 
-In parent component we have to use a property binding and bind it's myVar to child component seletor:
+In parent component we have to use a property binding and bind it's "myVar" to child component seletor:
 
 <child-component-name [myVar]="myVar"></child-component-name> 
 

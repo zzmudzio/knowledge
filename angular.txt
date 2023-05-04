@@ -122,3 +122,7 @@ studentList: string[] = ["John K."];
  
  So, basically when a button in child component is being pressed, a value is passed from child component into parent component and that value is added into studentList by addStudent() method that takes one parameter, that parameter is stored under $event. 
 
+
+=== 
+
+@ViewChild - this decorator enables a parent component to access properties, methods etc from it's child component. 

@@ -84,3 +84,41 @@ In parent component we have to use a property binding and bind it's "myVar" to c
 
 <child-component-name [myVar]="myVar"></child-component-name> 
 
+==== 
+
+Emitting data from  child into parent component: 
+
+In the child component class:
+
+@Output() eventEmitter = new EventEmitter<Type>(); 
+
+Then, we have to bind, for example a button press in child component with emitting an event. 
+
+In child template:
+
+<button (click)="sendDataToParent()">Click me </button>
+
+Inside child class:
+
+varThatWeWantToEmitToParent: string = "some text";
+sendDataToParent() : void {
+  this.eventEmitter.emit(this.varThatWeWantToEmitToParent);
+}
+
+We also have to modify parent class and template:
+
+inside a class: 
+
+studentList: string[] = ["John K."];
+  addStudent(studentData: string) {
+    this.studentList.push(studentData);
+  }
+  
+ Inside a parent template:
+ 
+ <app-students (eventEmitter)="addStudent($event)"></app-students>
+ 
+ So, we are listening for event emitter, if an event is raised we call addStudent function with parameter that is "varThatWeWantToEmitToParent" from the child component. 
+ 
+ So, basically when a button in child component is being pressed, a value is passed from child component into parent component and that value is added into studentList by addStudent() method that takes one parameter, that parameter is stored under $event. 
+

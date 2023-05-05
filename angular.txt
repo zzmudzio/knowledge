@@ -136,3 +136,16 @@ If we want to obtain a reference to that element, we have to write (in .*ts comp
 
 If we want to obtain a reference to an child component, we have to write(assuming we are still in template.html file):
 
+=== 
+
+ngOnChanges - if we want to "listen" to parent variable changing, we can use(in child component): 
+
+ @Input() watchedVariable: varType; 
+ 
+ ngOnChanges(changes: SimpleChanges): void {
+    if(changes['watchedVariable'] && !changes['watchedVariable'].isFirstChange()) {
+        //instructions..
+    }
+  }
+
+Above method executes when a change is noticed(but not first change). 

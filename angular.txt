@@ -126,3 +126,13 @@ studentList: string[] = ["John K."];
 === 
 
 @ViewChild - this decorator enables a parent component to access properties, methods etc from it's child component. 
+
+For example, if we have a file called app-template.html and there is a element:
+
+<div #myElement>Hello</div> 
+
+If we want to obtain a reference to that element, we have to write (in .*ts component file) :
+@ViewChild('myElement') myElement!: ElementRef;
+
+If we want to obtain a reference to an child component, we have to write(assuming we are still in template.html file):
+

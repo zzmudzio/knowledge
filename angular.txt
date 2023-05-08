@@ -149,3 +149,14 @@ ngOnChanges - if we want to "listen" to parent variable changing, we can use(in 
   }
 
 Above method executes when a change is noticed(but not first change). 
+
+=== 
+
+Ng-template:
+
+<ng-template> 
+  <p> some example text </p>
+</ng-template>
+
+This tag is always used along with directives such as ngIf, ngSwitch, ngFor. It does not render anything by itself, but it provides a possiblity to render something when given conditions are met. 
+

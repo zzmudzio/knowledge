@@ -16,6 +16,7 @@ To check the doc about a method we can press F12 inside editor.
 
 ng add <dependency_name> vs npm install <dep_name> -> the difference is that ng add will also update config files, such as packages.json
 
+!! There is a possibility to use a styling from parent component in child components. !! We do not have to set them separately. 
 
 =====
 
@@ -162,7 +163,6 @@ This tag is always used along with directives such as ngIf, ngSwitch, ngFor. It 
 
 ===
 
-
 Two way databinding: 
 
 If we want to exchange data between template and a controller we have to use two way data binding. 
@@ -176,3 +176,13 @@ In a controller:
 myVar: string = ""; 
 
 So, when myVar will change in a template, it will also be updated in a contoller, the same in the opposite way. 
+
+=== 
+
+Template reference variables: they help us to use a data from one part of the template in an other part. 
+Let's say we have an input: 
+<input type="text" #myVar (input)="someAction()> 
+If we want to use a value of that input in other place inside our template, we just have to use: {{ myVar.value }} 
+There has to be an event added(in this case `input`) for angular to run change check if we want to "live" display of the value that is being inputed into our field. 
+
+It works the same in case we have some child components inside our component, we can gain an access into their fields, methods etc. 

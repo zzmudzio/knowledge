@@ -161,3 +161,18 @@ Ng-template:
 This tag is always used along with directives such as ngIf, ngSwitch, ngFor. It does not render anything by itself, but it provides a possiblity to render something when given conditions are met. 
 
 ===
+
+
+Two way databinding: 
+
+If we want to exchange data between template and a controller we have to use two way data binding. 
+
+We have to import FormsModule and then, in a template, for example:
+
+<input [(ngModule)="myVar"]> 
+
+In a controller: 
+
+myVar: string = ""; 
+
+So, when myVar will change in a template, it will also be updated in a contoller, the same in the opposite way. 

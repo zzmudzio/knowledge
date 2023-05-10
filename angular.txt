@@ -163,6 +163,12 @@ This tag is always used along with directives such as ngIf, ngSwitch, ngFor. It 
 
 ===
 
+<ng-content> Helps us to pass html content from parent component inside a child component. It can be treated as an argument to component. 
+
+
+
+====
+
 Two way databinding: 
 
 If we want to exchange data between template and a controller we have to use two way data binding. 
@@ -184,5 +190,4 @@ Let's say we have an input:
 <input type="text" #myVar (input)="someAction()> 
 If we want to use a value of that input in other place inside our template, we just have to use: {{ myVar.value }} 
 There has to be an event added(in this case `input`) for angular to run change check if we want to "live" display of the value that is being inputed into our field. 
-
 It works the same in case we have some child components inside our component, we can gain an access into their fields, methods etc. 

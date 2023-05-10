@@ -160,3 +160,4 @@ Ng-template:
 
 This tag is always used along with directives such as ngIf, ngSwitch, ngFor. It does not render anything by itself, but it provides a possiblity to render something when given conditions are met. 
 
+===

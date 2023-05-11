@@ -3,6 +3,7 @@ Basic commands:
 ng new <name> => creates a new workspace and an initial project inside
 ng serve -o  => it builds the application, starts development server, watches the source files + rebuild the application when we make changes
 ng generate component <component_name>, e.g.: ng generate component rooms or using shortcut ng g c rooms 
+ng generate module <module_name>, e.g. generate module test or by using a shortcut ng g m test
 
 When we make any changes in angular.json file, we have to restart the server, those changes are not watched. 
 

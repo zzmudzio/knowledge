@@ -191,3 +191,25 @@ Let's say we have an input:
 If we want to use a value of that input in other place inside our template, we just have to use: {{ myVar.value }} 
 There has to be an event added(in this case `input`) for angular to run change check if we want to "live" display of the value that is being inputed into our field. 
 It works the same in case we have some child components inside our component, we can gain an access into their fields, methods etc. 
+
+
+==== 
+
+Custom directives:
+
+If we use a directive on e.g. <p> element, this element will be passed into a constructor method of directive class but the logic should be written outside of the constructor, preferably in ngOnInit method. 
+
+To generate a directive:
+ng g d directiveName
+
+Then inside a directive we have to specify what will be passed into it's constructor. As mentioned above, the logic should be implemented outside the constructor, e.g. in ngOnInit method. 
+
+constructor(private element: ElementRef) 
+  {}
+
+ngOnInit()
+  {
+    this.element.... // and the rest of the directive logic
+  }
+
+To use a directive inside an html tag as an attribute we have to use e.g. <p myNewDirective> some text </p> 

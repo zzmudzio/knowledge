@@ -166,8 +166,7 @@ This tag is always used along with directives such as ngIf, ngSwitch, ngFor. It 
 
 <ng-content> Helps us to pass html content from parent component inside a child component. It can be treated as an argument to component. 
 
-
-
+If we have a couple <ng-content> tags inside a view, without using "select", only the last one will be rendered. 
 ====
 
 Two way databinding: 

@@ -213,3 +213,24 @@ ngOnInit()
   }
 
 To use a directive inside an html tag as an attribute we have to use e.g. <p myNewDirective> some text </p> 
+
+====
+
+@HostListener() - it works similar as addEventListener in javascript. It is used along with directives. For example: 
+
+@Directive({
+  selector: '[appFirstDirective]'
+})
+export class FirstDirectiveDirective {
+  constructor(private element: ElementRef) { }
+  @HostListener("mouseenter") onMouseOver() {
+    this.element.nativeElement.style.backgroundColor = "green";
+  }
+  
+And, when this directive is applied to some button, such as: 
+
+<button appFirstDirective>Hover me</button> 
+
+The background color will be changed to green. 
+
+

@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "cff3ff13-d565-4171-9c97-1a769a101bfc",
+		"name": "Misc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Server 81 metrics",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gdnvlnx81:8724/metrics",
+					"protocol": "http",
+					"host": [
+						"gdnvlnx81"
+					],
+					"port": "8724",
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bearer token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://gdnvlnx91.dev.lsy.pl:8600/lido/las/authService/authenticate?userId=lidoapi&password=p2reK%234t3sV%26N!pN&domain=LIDO",
+					"protocol": "http",
+					"host": [
+						"gdnvlnx91",
+						"dev",
+						"lsy",
+						"pl"
+					],
+					"port": "8600",
+					"path": [
+						"lido",
+						"las",
+						"authService",
+						"authenticate"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "lidoapi"
+						},
+						{
+							"key": "password",
+							"value": "p2reK%234t3sV%26N!pN"
+						},
+						{
+							"key": "domain",
+							"value": "LIDO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bearer token - LasAdmin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://gdnvlnx91.dev.lsy.pl:8600/lido/las/authService/authenticate?userId=LasAdmin&password=LasAdmin1&domain=LIDO",
+					"protocol": "http",
+					"host": [
+						"gdnvlnx91",
+						"dev",
+						"lsy",
+						"pl"
+					],
+					"port": "8600",
+					"path": [
+						"lido",
+						"las",
+						"authService",
+						"authenticate"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "LasAdmin"
+						},
+						{
+							"key": "password",
+							"value": "LasAdmin1"
+						},
+						{
+							"key": "domain",
+							"value": "LIDO"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

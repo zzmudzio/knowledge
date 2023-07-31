@@ -1,0 +1,57 @@
+======================
+
+JPA/HIBERNATE 
+-----------------
+
+Entity Class - is a java class that is mapped to a database table
+
+@Table - it is an annotation that has to be placed above class name, it says to which db table
+given class is mapped. 
+
+@Table(name = "student")
+public Class Student {
+	//..
+	}
+	
+Class "Student" is mapped to db table "student" 
+
+@Column - it is an annotation that has to be placed above field name, to say to which column is 
+field mapped
+
+@Column(name = "id")
+private int id; 
+
+Above means that class field "id" is mapped to table column "id" 
+
+@Id - marks a class field as a primary key 
+@GeneratedValue(strategy = GenerationType.IDENTITY) - primary key generation strategy
+
+DAO - data access object - responsible for interfacing with a database 
+JPA Entity manager is the main component for saving/retrieving entities 
+
+entityManager.persist(Object object) -> saves object to db
+entityManager.find(className.class, dataBaseId) 
+TypedQuery<ClassName> theQuery = entityManager.createQuery("FROM <Entity name> WHERE ...", ClassName.class)
+
+@Transactional - handles transaction management
+@Repository is used to indicate that the class provides the mechanism 
+for storage, retrieval, search, update and delete operation on objects. It works with
+component scanning. 
+
+
+It is possible to automatically create database tables by using application.properties property: 
+
+spring.jpa.hibernate.ddl-auto=create <- there are a couple values that can be assigned, in this case database will be dropped and then a new one will be created 
+
+
+
+====================
+
+Rest CRUD API's 
+-----------------
+
+@RequestMapping - defines a path to our methods, we can think of it as our base URI. It is used to map web requests onto specific handler
+classes and methods and make web resources addressable. 
+
+
+

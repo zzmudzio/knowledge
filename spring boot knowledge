@@ -53,8 +53,18 @@ Rest CRUD API's
 @RequestMapping - defines a path to our methods, we can think of it as our base URI. It is used to map web requests onto specific handler
 classes and methods and make web resources addressable. 
 
+@PostConstruct - it is called only once when given Bean is being constructed, dependencies are injected(in regular 
+constructor they are not that's why it is not used for this kind of operations) 
 
+/api/students/{studentId} where {studentId} is a path variable 
 
+How to use it? 
+@GetMapping("/students/{studentId}")
+public Student getStudent(@PathVariable int studentId) {
+	//...
+	return studentList.get(0);
+	} 
+	
 
 ResponseEntity<Type> -> represents a http response, including headers, body, status. 
 

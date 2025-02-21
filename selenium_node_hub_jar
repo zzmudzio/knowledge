@@ -1,4 +1,0 @@
-Way to run selenium-server-4.8.1 as a node with chrome implementation:
-
-
-java -jar selenium-server-4.8.1.jar node --hub http://192.168.0.220:4444 --max-sessions 4 --log-level "fine" --port 7777 --driver-implementation "chrome"

@@ -1,0 +1,40 @@
+==== NETWORK DEVICES ===
+
+- Client -> it is a device tht accesses a service made available by the server
+- Server -> a device that provides functions or services for clients
+
+
+--- Switch ----
+
+Is used for forwarding traffic in a LAN(Local Area Network)
+
+Examples of switches are: Catalyst 9200, catalyst 3650
+
+They have many network interfaces/ports for end hosts to connect to(usually 24+)
+
+They do NOT provide connectivity between LAN/s / over the Internet. 
+
+--- Routers ---
+
+Example of routers are: ISR 1000, ISR 900, ISR 4000
+
+They are used to provide connectivity between LANs. They have fewer network interfaces than switches. 
+They are used to send the data over the Internet. 
+
+--- Network Firewalls ---
+
+They are a special devices that controll entering and leaving network traffic. 
+They can be placed outside of the router and inside of the network. 
+They have to be configured with given security rules to determine which traffic should be allowed and which not. 
+
+Example firewalls: ASA5500-X, Firepower 2100
+
+Next-Generation Firewalls are the ones which include more modern and advanced filtering capabilities. 
+The above mentioned models are considered as next-gen fws. 
+
+--- Host-based firewalls ---
+
+They are a software applications that filter traffic entering and exiting a host machine. 
+
+
+

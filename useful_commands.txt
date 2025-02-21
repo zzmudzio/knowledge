@@ -1,6 +1,0 @@
-1. Way to run selenium tests using maven and testng, by running testng.xml file: 
-
-cd C:\\Users\\m.zmuda-trzebia\\IdeaProjects\\jenkins_test
-mvn clean test -DsuiteXmlFile=testng
-
-========================

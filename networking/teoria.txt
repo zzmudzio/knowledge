@@ -1,6 +1,6 @@
 ==== NETWORK DEVICES ===
 
-- Client -> it is a device tht accesses a service made available by the server
+- Client -> it is a device that accesses a service made available by the server
 - Server -> a device that provides functions or services for clients
 
 
@@ -29,6 +29,8 @@ They have to be configured with given security rules to determine which traffic 
 
 Example firewalls: ASA5500-X, Firepower 2100
 
+Asa stands for adaptive security appliance. 
+
 Next-Generation Firewalls are the ones which include more modern and advanced filtering capabilities. 
 The above mentioned models are considered as next-gen fws. 
 
@@ -37,4 +39,49 @@ The above mentioned models are considered as next-gen fws.
 They are a software applications that filter traffic entering and exiting a host machine. 
 
 
+==== INTERFACES AND CABLES ===
+
+RJ - Registered Jack
+IEEE - Institute of Electrical and Electronics Engineers
+
+--- Ethernet standards(copper) ----
+
+Speed	Common name	IEEE Standard	Informal name	Max length
+10 Mbps  Ethernet	802.3i		10BASE-T	100m
+100 Mbps Fast Ethernet	802.3u		100BASE-T	100m
+1Gbps	 Gigabit Eth.	802.3ab		1000BASE-T	100m
+10Gbps	 10 Gig Eth.	802.3an		10GBASE-T	100m
+
+--- UTP Cables ---
+
+UTP - unshielded twisted pair - no metallic shield so vulnerable to electromagnetic interference(zakłócenia)
+
+There are 8 pins, 4 pairs
+
+-- Ethernet, Fast Ethernet --
+
+Ethernet, Fast Ethernet use 2 pairs(4 wires).
+
+Full Duplex - two devices can send and receive data on the same time. 
+
+PC sends data on pins 1,2 and receives on 3 and 6. 
+Switch sends data on pins 3 and 6, and receives on 1 and 2. 
+Router sends data on pins 1,2 and receives on 3 and 6. 
+Firewall sends data on pins 1,2 and receives on 3 and 6. 
+
+-- Straight through cable ---
+
+Pin 1 on one end of the rj 45 copper cable connects straight through to the pin 1 on the other end etc.
+
+-- Crossover cable ---
+
+Pin 3 on one end of the rj 45 copper cable connects to the pin 1 on the other end etc.
+
+Switch:
+
+Pin 1 < 3 
+Pin 2 < 6
+Pin 3 > 1
+Pin 6 > 2 
+	
 

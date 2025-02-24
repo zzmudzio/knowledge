@@ -84,4 +84,57 @@ Pin 2 < 6
 Pin 3 > 1
 Pin 6 > 2 
 	
+---- Auto MDI-X -----
+
+It helps to detect which pins are used by their neighbour to transmit data and adjust their pins to adjust and receive the data. 
+
+--- Gigabit Ethernet, 10 Gig Ethernet --- 
+
+They use all 4 paris of the pins. 
+
+Each pair is bidirectional, so it can receive and send the data. 
+
+--- Fiber Optic Cable --- 
+
+fiber optic - światłowód
+
+Instead of electric signal of copper wire, they send the light through the glass fibers.
+
+SFP Transceiver - Small Form-Factor Pluggable 
+
+The fiber optic cables have 2 connectors on each end - one for sending and one for receiving data. 
+They use separate cable for receiving and sending data. 
+Transmit on the left is being connected to the receive on the right. 
+Transmit on the right is being connected to the receive on the left. 
+
+Structure of the fiber optic cable is: 
+
+- fiber glass core - light is being transmitted down this core,
+- cladding(okładzina) that reflects light,
+- protective buffer(protects from breaking),
+- the outer jacket of the cable 
+
+--- Single mode and multimode fiber --- 
+
+Multimode fiber:
+ - core diameter is wider than single mode fiber, 
+ - allows multiple angles(modes) of light waves to enter the fiberglass core 
+ - allows longer cables than UTP but shorther than single mode 
+ - cheaper than single mode fiber(cheaper LED based SFP transmitters) 
+
+Single-mode fiber:
+ - core diameter is narrower than multimode fiber, 
+ - light enter at a single angle(mode) from a laser-based transmitter,
+ - allows longer cables than both UTP and multimode fiber cables,
+ - more expensive than multimode fiber due to more expensive laser based SFP transmitters 
+
+--- Ethernet standards (fiber optic) ---
+
+
+Informal name	IEEE Standard	Speed	Cable Type	Max length
+
+1000BASE-LX	802.3z		1 Gbps	Multi or single	550m (MM), 5km (SM)
+10GBASE-SR	802.3ae 	10 Gbps	Multi		400m
+10GBASE-LR	802.3ae		10 Gbps	Single		10 km
+10GBASE-ER	802.3ae		10 Gbps	Single		30 km
 

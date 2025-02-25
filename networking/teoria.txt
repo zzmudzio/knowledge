@@ -138,3 +138,56 @@ Informal name	IEEE Standard	Speed	Cable Type	Max length
 10GBASE-LR	802.3ae		10 Gbps	Single		10 km
 10GBASE-ER	802.3ae		10 Gbps	Single		30 km
 
+
+--- Presentation layer ----
+
+Translates data to the appropriate format. Data in the application layer is in 'application format'.
+Therefore it has to be translated to a different format to be sent over the network. 
+
+--- Session layer ----
+
+Controls dialogues (sessions) between communicating hosts. Establishes, and terminates
+connections between local app and the remote one(for example my browser and youtube).
+
+--- Transport layer ----
+
+Layers 7,6,5 provide a Data. 
+
+Segments and reassembles(składać ponownie) data for communications between end hosts. Breaks large pieces of data
+into smaller segments which can be more easily sent over the network and less likely to cause
+transmission problems if errors occur. Provide host to host communication.
+
+Data + Layer 4 prepares Segment. Each segment consists of [Data][L4 Header]
+
+--- Network layer --- 
+
+Provides connectivity between end hosts on different networks(outside of LAN).
+Provides logical addressing(IP addresses).
+Provides path selection between source and destination. 
+Routers operate at Layer 3. 
+
+[Data][L4 header][L3 header] => it is called a packet
+
+--- Data link ---
+
+Provides node to node connectivity and data transfer(e.g. Pc to switch, switch to router etc).
+Defines how data is formatted for transmission over a physical medium(for example copper UTP cables).
+
+Switches operate at layer 2. 
+
+[L2 trailer][Data][L4 header][L3 header][L2 header] => it is called a frame
+
+--- Physical layer ---
+
+Defines physical characteristics of the medium to transfer data between devices.
+For example voltage levels, max transmission distances etc. 
+
+Digital bits are converted into electrical or radio signals. 
+
+
+=== TCP/IP Suite ===
+
+
+
+
+
